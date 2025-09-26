@@ -15,6 +15,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 
 #include "Command.h"
 
+#include "Files.h"
 #include "DataFile.h"
 #include "DataNode.h"
 #include "DataWriter.h"
@@ -200,6 +201,20 @@ void Command::SetKey(Command command, int keycode)
 		commandForKeycode[it.second] = it.first;
 		++keycodeCount[it.second];
 	}
+}
+
+
+
+// Reset key bindings to installation defaults and reload settings.
+void Command::ResetToDefault()
+{
+	// Clear current mappings & names first.
+	keycodeForCommand.clear();
+	keyName.clear();
+	commandForKeycode.clear();
+	keycodeCount.clear();
+
+	LoadSettings(Files::Resources() / "keys.txt");
 }
 
 

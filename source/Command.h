@@ -106,6 +106,9 @@ public:
 	static void SaveSettings(const std::filesystem::path &path);
 	static void SetKey(Command command, int keycode);
 
+	// Reset all key bindings to their default values.
+	static void ResetToDefault();
+
 	// Get the description or keycode name for this command. If this command is
 	// a combination of more than one command, an empty string is returned.
 	const std::string &Description() const;
