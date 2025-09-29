@@ -208,12 +208,6 @@ void Command::SetKey(Command command, int keycode)
 // Reset key bindings to installation defaults and reload settings.
 void Command::ResetToDefault()
 {
-	// Clear current mappings & names first.
-	keycodeForCommand.clear();
-	keyName.clear();
-	commandForKeycode.clear();
-	keycodeCount.clear();
-
 	LoadSettings(Files::Resources() / "keys.txt");
 }
 
