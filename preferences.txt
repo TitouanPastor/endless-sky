@@ -10,7 +10,6 @@
 "ui volume" 4
 volume 0.5
 "weapon volume" 4
-"window size" 0 0
 zoom 100
 "scroll speed" 60
 "boarding target" 0
@@ -57,3 +56,20 @@ vsync 1
 "Turrets focus fire" 1
 fullscreen 1
 maximized 0
+"Show CPU / GPU load" 0
+"Reduce large graphics" 0
+"Fixed starfield zoom" 0
+"Show missile overlays" 0
+"Highlight player's flagship" 0
+"Rotate flagship in HUD" 0
+"Clickable radar display" 0
+"Control ship with mouse" 0
+"Aim turrets with mouse" 0
+"Repair fighters in" 0
+"Fighters transfer cargo" 0
+"Rehire extra crew when lost" 0
+"Automatically unpark flagship" 0
+"System map sends move orders" 0
+"Always underline shortcuts" 0
+"Interrupt fast-forward" 0
+"Show parenthesis" 0
