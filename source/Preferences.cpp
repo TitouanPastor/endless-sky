@@ -177,6 +177,27 @@ namespace {
 void Preferences::ResetToDefaults()
 {
 	Preferences::Load(Files::Resources() / "preferences.txt");
+	if (screenModeIndex != GameWindow::IsFullscreen()){
+		GameWindow::ToggleFullscreen();
+	}
+
+	int targetIndex = vsyncIndex;
+	if(!GameWindow::SetVSync(static_cast<VSync>(targetIndex)))
+	{
+		// Not all drivers support adaptive VSync. Increment desired VSync again.
+		++targetIndex;
+		if(targetIndex == static_cast<int>(VSYNC_SETTINGS.size()))
+			targetIndex = 0;
+		if(!GameWindow::SetVSync(static_cast<VSync>(targetIndex)))
+		{
+			// Restore original saved setting.
+			Logger::LogError("Unable to change VSync state");
+			GameWindow::SetVSync(static_cast<VSync>(vsyncIndex));
+		}
+	}
+	vsyncIndex = targetIndex;
+	
+	Screen::SetZoom(100);
 }
 
 void Preferences::Load(const std::filesystem::path &prefs_path)

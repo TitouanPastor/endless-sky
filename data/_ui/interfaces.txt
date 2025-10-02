@@ -512,9 +512,9 @@ interface "controls"
 		color medium
 		hover bright
 	sprite "ui/dialog cancel"
-        center -30 210
+		center -30 210
 	active
-	button r "_Reset"
+	button t "Rese_t"
 		center -30 210
 		dimensions 90 30
 	visible if "multiple controls pages"
@@ -555,6 +555,10 @@ interface "settings"
 		dimensions 90 30
 		color medium
 		hover bright
+	active
+	button t "Rese_t"
+		center -30 210
+		dimensions 90 30
 	visible if "multiple settings pages"
 	sprite "ui/dialog cancel"
 		center -115 210
