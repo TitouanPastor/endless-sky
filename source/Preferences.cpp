@@ -29,6 +29,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include <algorithm>
 #include <cstddef>
 #include <map>
+#include <filesystem>
 
 using namespace std;
 
@@ -173,9 +174,12 @@ namespace {
 	int previousSaveCount = 3;
 }
 
+void Preferences::ResetToDefaults()
+{
+	Preferences::Load(Files::Resources() / "preferences.txt");
+}
 
-
-void Preferences::Load()
+void Preferences::Load(const std::filesystem::path &prefs_path)
 {
 	// These settings should be on by default. There is no need to specify
 	// values for settings that are off by default.
@@ -201,7 +205,7 @@ void Preferences::Load()
 	settings["Target asteroid based on"] = true;
 	settings["Deadline blink by distance"] = true;
 
-	DataFile prefs(Files::Config() / "preferences.txt");
+	DataFile prefs(prefs_path);
 	for(const DataNode &node : prefs)
 	{
 		const string &key = node.Token(0);

@@ -203,7 +203,7 @@ int main(int argc, char *argv[])
 		}
 		assert(!isConsoleOnly && "Attempting to use UI when only data was loaded!");
 
-		Preferences::Load();
+		Preferences::Load(Files::Config() / "preferences.txt");
 
 		// Load global conditions:
 		DataFile globalConditions(Files::Config() / "global conditions.txt");

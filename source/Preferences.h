@@ -18,7 +18,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include <cstdint>
 #include <string>
 #include <vector>
-
+#include <filesystem>
 
 
 class Preferences {
@@ -129,7 +129,8 @@ public:
 
 
 public:
-	static void Load();
+	static void ResetToDefaults();
+	static void Load(const std::filesystem::path &prefs_path);
 	static void Save();
 
 	static bool Has(const std::string &name);
