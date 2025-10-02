@@ -196,8 +196,6 @@ void Preferences::ResetToDefaults()
 		}
 	}
 	vsyncIndex = targetIndex;
-	
-	Screen::SetZoom(100);
 }
 
 void Preferences::Load(const std::filesystem::path &prefs_path)
