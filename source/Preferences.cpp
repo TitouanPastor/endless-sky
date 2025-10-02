@@ -174,9 +174,13 @@ namespace {
 	int previousSaveCount = 3;
 }
 
+// Reset settings to installation defaults
 void Preferences::ResetToDefaults()
 {
+	// Loading preferences
 	Preferences::Load(Files::Resources() / "preferences.txt");
+
+	// Updating GameWindow on resetted information
 	if (screenModeIndex != GameWindow::IsFullscreen()){
 		GameWindow::ToggleFullscreen();
 	}
