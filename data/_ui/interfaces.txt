@@ -556,6 +556,9 @@ interface "settings"
 		color medium
 		hover bright
 	active
+	sprite "ui/dialog cancel"
+		center -30 210
+	active
 	button t "Rese_t"
 		center -30 210
 		dimensions 90 30
