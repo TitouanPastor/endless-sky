@@ -273,7 +273,7 @@ bool PreferencesPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &comma
 	}
 	else if((key == 't') && (page == 'c'))
 	{
-		Command::ResetToDefault();
+		Command::ResetToDefaults();
 		Command::SaveSettings(Files::Config() / "keys.txt");
 		UI::PlaySound(UI::UISound::NORMAL);
 	}

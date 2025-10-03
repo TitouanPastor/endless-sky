@@ -206,7 +206,7 @@ void Command::SetKey(Command command, int keycode)
 
 
 // Reset key bindings to installation defaults and reload settings.
-void Command::ResetToDefault()
+void Command::ResetToDefaults()
 {
 	LoadSettings(Files::Resources() / "keys.txt");
 }
